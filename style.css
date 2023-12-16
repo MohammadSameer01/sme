@@ -16,6 +16,9 @@ body {
     align-items: center;
     height: 100vh;
     overflow: hidden;
+    background-image: url(https://cdn.spacetelescope.org/archives/images/screen/heic0913f.jpg);
+    background-size: cover;
+
 }
 
 .sun {
@@ -28,7 +31,6 @@ body {
         -40px -40px 100px var(--clr),
         40px -40px 100px var(--clr),
         -40px 40px 100px var(--clr); */
-    border: 2px solid rgba(0, 0, 0, 0.8);
     transition: all 5s linear;
     position: sticky;
     top: 0;
@@ -156,5 +158,55 @@ body {
 @keyframes moonrotation {
     100% {
         transform: translate(-26%,-25%) rotate(360deg) ;
+    }
+}
+
+@media screen and (min-width:300px) and (max-width:900px) {
+    body{
+        background: url(https://cdn.spacetelescope.org/archives/images/screen/heic0913f.jpg);
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+        position: fixed;
+        background-size: cover;
+    }
+    .sun{
+        height: 200px;
+        width: 200px;
+    }
+    .earth {
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        position: absolute;
+        background-image: url(earth.png);
+        background-size: cover;
+        animation: sun 6s linear infinite;
+        z-index: 100;
+    }
+    
+    .earthsorbit {
+        height: 580px;
+        width: 580px;
+        /* border: 1px solid rgba(255, 255, 255, 0.1); */
+        position: absolute;
+        border-radius: 50%;
+        z-index: -2;
+        animation: earthrotation 60s linear infinite;
+    }
+    .moon{
+        height: 240px;
+        width: 240px;
+        transform: translate(-26%,-25%);
+        /* border: 1px solid rgba(255, 255, 255, 0.4); */
+        border-radius: 50%;
+        animation: moonrotation 6s linear infinite;
+    }
+    .rmoon{
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        background: url(moon.png);
+        background-size: cover;
     }
 }
